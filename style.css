@@ -1,4 +1,81 @@
 img {
   width: 30px;
   height: 30px;
+  background: none;
 }
+.container {
+  background-color: rgb(224, 224, 226);
+}
+.navbar {
+  height: 80px;
+  background-color: rgb(224, 224, 226);
+}
+.titulo {
+  height: 100px;
+  background-color: purple;
+  display: flex;
+}
+.h1-titulo {
+  font-size: 40px;
+  color: whitesmoke;
+  margin-left: 2%;
+  padding: 3%;
+  text-transform: uppercase;
+  margin-bottom: 1%;
+}
+
+.imagen-home {
+  display: block;
+  width: 70%;
+  height: auto;
+  margin: auto;
+  padding: 40px;
+}
+.table {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+.tabla-partidos tbody tr td:last-child {
+  border: 2px solid whitesmoke;
+}
+.tabla-partidos tbody tr td {
+  padding: 5px;
+}
+.texto-carrusel {
+  color: rgb(233, 233, 233);
+}
+.subtitulo-h2 {
+  display: block;
+  margin: auto;
+  font-size: 40px;
+  color: whitesmoke;
+}
+.subtitulos {
+  height: 80px;
+  background-color: purple;
+  display: flex;
+}
+.equipos-home {
+  display: flex;
+  font-size: 20px;
+  margin: auto;
+  padding: 5px;
+}
+.descripcion-equipos {
+  width: 70%;
+  margin: auto;
+  padding: 20px;
+}
+.row {
+  font-size: 15px;
+  border: 2px solid purple;
+  margin-bottom: 40px;
+}
+/*@media (max-width: 768px) {
+  .table {
+    width: 100%;
+    margin: 0;
+  }
+}*/

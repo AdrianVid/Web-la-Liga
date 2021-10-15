@@ -1,4 +1,4 @@
-let standings = {
+let clasificaciones = {
   filters: {},
   competition: {
     id: 2014,
