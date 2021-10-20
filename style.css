@@ -34,7 +34,7 @@ img {
 .table {
   width: 70%;
   margin: auto;
-  text-align: center;
+
   align-items: center;
 }
 .tabla-partidos tbody tr td:last-child {
@@ -79,3 +79,17 @@ img {
     margin: 0;
   }
 }*/
+.tablas-estadisticas {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+.titulo-tablas {
+  width: 70%;
+  text-align: center;
+  background-color: rgb(166, 207, 69);
+  color: whitesmoke;
+}
+tbody.tbody-estadisticas tr :nth-child(n + 2) {
+  text-align: center;
+}
