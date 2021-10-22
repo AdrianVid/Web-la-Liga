@@ -54,7 +54,7 @@ img {
 }
 .subtitulos {
   height: 80px;
-  background-color: purple;
+  background-color: rgb(166, 207, 69);
   display: flex;
 }
 .equipos-home {

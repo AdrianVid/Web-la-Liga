@@ -48,10 +48,35 @@
         </div>
       </div>
     </nav>
-    <div class="titulo">
+    <div class="titulo" id="input-Nombre">
       <h1 class="h1-titulo">Partidos</h1>
     </div>
     <div class="container" id="container">
+      
+      
+      <div class="filtros" id="filtro">
+        <form action="" class="filtros">
+        <select name="select" id="select">
+          <option value="Todos">Todos los equipos</option>
+        </select>
+        
+        <input type="radio" id="ganados" name="1" />Ganados
+        <input type="radio" id="perdidos" name="1" />Perdidos
+        <input type="radio" id="empatados" name="1" />Empatados
+        <input type="radio" id="no-jugados" name="1" />Proximos
+        <button type="button" id="buscar">Buscar</button>
+        <button type="reset" id="reset">Restaurar </button>
+      </form>
+    </div>
+
+      
+      
+      
+      
+      
+      
+      
+      
       <div id="tabla" class="table table-dark table-striped tabla-partidos">
         <table>
         <thead>
@@ -66,8 +91,9 @@
       </table>
       </div>
     </div>
-
+    
     <script src="./matches.js"></script>
-    <script src="./functionMatches.js"></script>
+    <script src="./filtros.js"></script>
+   
   </body>
 </html>
