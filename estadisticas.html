@@ -48,15 +48,21 @@
          </div>
        </div>
      </nav>
+     
      <div class="titulo">
         <h1 class="h1-titulo">Estadisticas</h1>
       </div>
+
+
     <div class="container" id="container">
+
+      <div class="lds-dual-ring loader" id="loader"></div>
+
         <div class="tablas-estadisticas">
       <div class="d-inline-flex align-content-space-around p-2">
-          <div class="table tablas-goleadores" >
+          <div class="table tablas-goleadores table-responsive" >
               <h4 class="titulo-tablas">Equipos mas goleadores en total de partidos</h4>
-        <table>
+        <table class=" table table-dark table-striped">
           <thead>
             <tr>
               <th>Equipo</th>
@@ -72,7 +78,7 @@
       </div class="d-inline-flex p-2 align-content-space-around">
       <div class="table tablas-goleadores">
           <h4 class="titulo-tablas">Equipos menos goleados jugando de visitante</h4>
-        <table>
+        <table class="table table-dark table-striped table-responsive">
           <thead>
             <tr>
               <th>Equipo</th>
@@ -87,8 +93,6 @@
 </div>
 </div>
 </div>
-
-    <script src="./matches.js"></script>
     <script src="./estadisticas.js"></script>
   </body>
 </html>

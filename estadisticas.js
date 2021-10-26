@@ -1,4 +1,29 @@
-estadPartidos(data.matches);
+let api = "46626f00e951432da448118605114abb";
+let url = "https://api.football-data.org/v2/competitions/2014/matches";
+
+fetch(url, {
+  method: "GET",
+  headers: {
+    "X-Auth-Token": api,
+  },
+})
+  .then(function (response) {
+    if (response.ok) {
+      return response.json();
+    }
+  })
+  .then(function (data) {
+    init(data);
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
+function init(data) {
+  estadPartidos(data.matches);
+  partidosVisitantes(data.matches);
+  load();
+}
+
 function estadPartidos(partidos) {
   let arrEquipos = [];
 
@@ -53,6 +78,7 @@ function estadPartidos(partidos) {
   ordenaravg(arrEquipos);
   crearTablaAvg(arrEquipos);
 }
+
 function ordenaravg(arrEquipos) {
   arrEquipos.sort(function (b, a) {
     if (a.avg > b.avg) {
@@ -89,7 +115,7 @@ function crearTablaAvg(array) {
     tbody.append(fila);
   }
 }
-partidosVisitantes(data.matches);
+
 function partidosVisitantes(partidos) {
   let visitantes = [];
 
@@ -120,6 +146,7 @@ function partidosVisitantes(partidos) {
   ordenarVis(visitantes);
   crearTablaVis(visitantes);
 }
+
 function ordenarVis(visitantes) {
   visitantes.sort(function (a, b) {
     if (a.golesEnContra > b.golesEnContra) {
@@ -131,6 +158,7 @@ function ordenarVis(visitantes) {
     return 0;
   });
 }
+
 function crearTablaVis(array2) {
   let tbody2 = document.getElementById("tbody2");
   for (let i = 0; i < array2.length; i++) {
@@ -152,3 +180,7 @@ function crearTablaVis(array2) {
     tbody2.append(fila);
   }
 }
+
+window.onload = function load() {
+  loader.style.display = "none";
+};

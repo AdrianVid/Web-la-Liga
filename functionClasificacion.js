@@ -1,6 +1,30 @@
-console.log(clasificaciones.standings[0].table);
-
+let api = "46626f00e951432da448118605114abb";
+let url = "https://api.football-data.org/v2/competitions/2014/standings";
 let tbody = document.getElementById("tbody");
+
+fetch(url, {
+  method: "GET",
+  headers: {
+    "X-Auth-Token": api,
+  },
+})
+  .then(function (response) {
+    console.log(response);
+    if (response.ok) {
+      return response.json();
+    }
+  })
+  .then(function (stand) {
+    init(stand);
+    console.log(stand);
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
+function init(stand) {
+  clasificaciones = stand.standings;
+  crearTabla(stand.standings[0].table);
+}
 
 function crearTabla(clasificacion) {
   for (let i = 0; i < clasificacion.length; i++) {
@@ -31,4 +55,6 @@ function crearTabla(clasificacion) {
     tbody.append(fila);
   }
 }
-crearTabla(clasificaciones.standings[0].table);
+window.onload = function () {
+  loader.style.display = "none";
+};

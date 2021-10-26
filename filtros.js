@@ -1,18 +1,41 @@
-let partidos = data.matches;
+let api = "46626f00e951432da448118605114abb";
+let url = "https://api.football-data.org/v2/competitions/2014/matches";
+
 let select = document.getElementById("select");
 let botonBuscar = document.getElementById("buscar");
 let ganados = document.getElementById("ganados");
 let perdidos = document.getElementById("perdidos");
 let empatados = document.getElementById("empatados");
 let proximos = document.getElementById("no-jugados");
+let loader = document.getElementById("loader");
 
-selectEquipos();
-crearTabla(partidos);
-
-botonBuscar.addEventListener("click", function () {
-  tbody.innerHTML = "";
-  filtros(partidos);
-});
+fetch(url, {
+  method: "GET",
+  headers: {
+    "X-Auth-Token": api,
+  },
+})
+  .then(function (response) {
+    console.log(response);
+    if (response.ok) {
+      return response.json();
+    }
+  })
+  .then(function (data) {
+    init(data);
+    console.log(data);
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
+function init(data) {
+  crearTabla(data.matches);
+  selectEquipos(data.matches);
+  botonBuscar.addEventListener("click", function () {
+    tbody.innerHTML = "";
+    filtros(data.matches);
+  });
+}
 
 function crearTabla(partidos) {
   for (let i = 0; i < partidos.length; i++) {
@@ -33,7 +56,8 @@ function crearTabla(partidos) {
       `${partidos[i].score.fullTime.homeTeam}-${partidos[i].score.fullTime.awayTeam}` ==
       "null-null"
     ) {
-      celda2.innerHTML = "Proximamente";
+      celda2 = document.createElement("td");
+      celda2.append(imgHome, "Prox", imgAway);
     }
     let celda3 = document.createElement("td");
     celda3.innerHTML = `${partidos[i].awayTeam.name}`;
@@ -46,7 +70,7 @@ function crearTabla(partidos) {
   }
 }
 
-function selectEquipos() {
+function selectEquipos(partidos) {
   let arrayEquipos = partidos.map(function (equipo) {
     return equipo.homeTeam.name;
   });
@@ -61,28 +85,29 @@ function selectEquipos() {
   console.log(setEquipos);
 }
 
-function filtros() {
+function filtros(partidos) {
+  console.log(partidos);
   let arrayFiltrada = [];
 
   if (select.value == "Todos los equipos") {
-    crearTabla();
+    crearTabla(partidos);
     return;
+  } else {
+    arrayFiltrada = partidos.filter(
+      (equipo) =>
+        equipo.homeTeam.name == select.value ||
+        equipo.awayTeam.name == select.value
+    );
   }
-  arrayFiltrada = data.matches.filter(
-    (equipo) =>
-      equipo.homeTeam.name == select.value ||
-      equipo.awayTeam.name == select.value
-  );
 
   if (ganados.checked == true) {
-    arrayFiltrada =
-      arrayFiltrada.filter(
-        (equipo) =>
-          equipo.homeTeam.name == select.value &&
-          equipo.score.winner == "HOME_TEAM"
-      ) ||
-      (equipo.awayTeam.name == select.value &&
-        equipo.score.winner == "AWAY_TEAM");
+    arrayFiltrada = arrayFiltrada.filter(
+      (equipo) =>
+        (equipo.homeTeam.name == select.value &&
+          equipo.score.winner == "HOME_TEAM") ||
+        (equipo.awayTeam.name == select.value &&
+          equipo.score.winner == "AWAY_TEAM")
+    );
   } else if (perdidos.checked == true) {
     arrayFiltrada = arrayFiltrada.filter(
       (equipo) =>
@@ -100,6 +125,16 @@ function filtros() {
       (equipo) => equipo.status != "FINISHED"
     );
   }
-
+  if (arrayFiltrada == "") {
+    crearTabla(partidos);
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "No hay resultados para tu busqueda",
+    });
+  }
   crearTabla(arrayFiltrada);
 }
+window.onload = function () {
+  loader.style.display = "none";
+};

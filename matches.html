@@ -52,33 +52,23 @@
       <h1 class="h1-titulo">Partidos</h1>
     </div>
     <div class="container" id="container">
-      
-      
+
       <div class="filtros" id="filtro">
-        <form action="" class="filtros">
-        <select name="select" id="select">
-          <option value="Todos">Todos los equipos</option>
+        <form action="" class="form-filtros">
+        <select name="select" class="boton" id="select">
+        <option value="Todos los equipos">Todos los equipos</option>
         </select>
-        
         <input type="radio" id="ganados" name="1" />Ganados
         <input type="radio" id="perdidos" name="1" />Perdidos
         <input type="radio" id="empatados" name="1" />Empatados
         <input type="radio" id="no-jugados" name="1" />Proximos
-        <button type="button" id="buscar">Buscar</button>
-        <button type="reset" id="reset">Restaurar </button>
-      </form>
-    </div>
-
-      
-      
-      
-      
-      
-      
-      
-      
-      <div id="tabla" class="table table-dark table-striped tabla-partidos">
-        <table>
+        <button type="button" class="boton" id="buscar">Buscar</button>
+        <button type="reset" class="boton" id="reset">Restaurar </button>
+      </form> 
+      <div class="lds-dual-ring loader" id="loader"></div>
+      </div>
+      <table id="tabla" class="table table-striped table-dark  tabla-partidos">
+        
         <thead>
           <tr>
             <th>Local</th>
@@ -89,11 +79,10 @@
         </thead>
         <tbody id="tbody"></tbody>
       </table>
-      </div>
     </div>
-    
-    <script src="./matches.js"></script>
-    <script src="./filtros.js"></script>
    
+    
+    <script src="./filtros.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
