@@ -1,10 +1,6 @@
 let api = "46626f00e951432da448118605114abb";
 let url = "https://api.football-data.org/v2/competitions/2014/matches";
 
-window.onload = function load() {
-  loader.style.display = "none";
-};
-
 fetch(url, {
   method: "GET",
   headers: {
@@ -184,3 +180,7 @@ function crearTablaVis(array2) {
     tbody2.append(fila);
   }
 }
+
+window.onload = function load() {
+  loader.style.display = "none";
+};
