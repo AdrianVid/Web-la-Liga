@@ -2,6 +2,10 @@ let api = "46626f00e951432da448118605114abb";
 let url = "https://api.football-data.org/v2/competitions/2014/standings";
 let tbody = document.getElementById("tbody");
 
+window.onload = function () {
+  loader.style.display = "none";
+};
+
 fetch(url, {
   method: "GET",
   headers: {
@@ -55,6 +59,3 @@ function crearTabla(clasificacion) {
     tbody.append(fila);
   }
 }
-window.onload = function () {
-  loader.style.display = "none";
-};

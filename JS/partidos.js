@@ -8,6 +8,10 @@ let empatados = document.getElementById("empatados");
 let proximos = document.getElementById("no-jugados");
 let loader = document.getElementById("loader");
 
+window.onload = function () {
+  loader.style.display = "none";
+};
+
 fetch(url, {
   method: "GET",
   headers: {
@@ -85,7 +89,6 @@ function selectEquipos(partidos) {
 }
 
 function filtros(partidos) {
-  console.log(partidos);
   let arrayFiltrada = [];
 
   if (select.value == "Todos los equipos") {
@@ -134,6 +137,3 @@ function filtros(partidos) {
   }
   crearTabla(arrayFiltrada);
 }
-window.onload = function () {
-  loader.style.display = "none";
-};
