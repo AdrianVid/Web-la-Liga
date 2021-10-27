@@ -1,6 +1,5 @@
 let api = "46626f00e951432da448118605114abb";
 let url = "https://api.football-data.org/v2/competitions/2014/matches";
-
 let select = document.getElementById("select");
 let botonBuscar = document.getElementById("buscar");
 let ganados = document.getElementById("ganados");
