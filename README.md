@@ -7,7 +7,8 @@ Puedes entrar en la web a traves de este enlace [weblaLiga-adrianv](https://webl
 #Descripción
 
 En la web la Liga podemos encontrar la clasificacion actual, los resultados de los partidos jugados con un filtro. Con él podremos buscar los diferentes partidos de cada equipo incluso buscar los partidos pendientes de jugar. También hay un apartado con estadísticas de los equipos. Todos los datos se iran actualizando automaticamente.<br>
-Se divide en las siguientes partes:<br>
+Se divide en las siguientes partes:<br><br>
+
 -Pagina home con el menu e informacion de laLiga.<br>
 -Página de clasificación de la temporada con datos actualizados.<br>
 -Página de resultados con todos los partidos de la temporada con los nombres de los equipos el resultado y la jornada correspondiente a cada partido.<br>
