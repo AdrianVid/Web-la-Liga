@@ -13,7 +13,7 @@ Se divide en las siguientes partes:<br><br>
 -Página de clasificación de la temporada con datos actualizados.<br>
 -Página de resultados con todos los partidos de la temporada con los nombres de los equipos el resultado y la jornada correspondiente a cada partido.<br>
 -Filtrar los resultados por equipo y dentro de cada equipo poder ver los partidos ganados, perdidos, empatados, perdidos o que aun no se han disputado.<br>
--Página de estadísticas ene la que encontramos dos tablas con los mejores 5 equipos en distintas categorias.<br>
+-Página de estadísticas en la que encontramos dos tablas con los mejores 5 equipos en distintas categorias.<br>
 
 
 #Descripción técnica
