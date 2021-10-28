@@ -4,7 +4,7 @@ let url = "https://api.football-data.org/v2/competitions/2014/matches";
 fetch(url, {
   method: "GET",
   headers: {
-    "X-Auth-Token": api,
+    "X-Auth-Token": "46626f00e951432da448118605114abb",
   },
 })
   .then(function (response) {
@@ -23,21 +23,15 @@ function init(data) {
 }
 
 function equipos(partidos) {
-  let equiposLiga = [];
-  for (let i = 0; i < partidos.length; i++) {
-    listaEquipos(equiposLiga);
+  let listaEquipos = partidos.map(function (equipo) {
+    return equipo.homeTeam.name;
+  });
+  let setEquipos = [...new Set(listaEquipos)];
+
+  for (let i = 0; i < setEquipos.length; i++) {
+    let optionSelect = document.createElement("div");
+    row.append(optionSelect);
+    optionSelect.innerHTML = setEquipos[i];
   }
-}
-
-function listaEquipos(lista) {
-  let row = document.getElementById("row");
-  for (let j = 0; j < lista.lenght; j++) {
-    let escudo = document.createElement("img");
-    escudo.src = `https://crests.football-data.org/${lista[j].id}.svg`;
-
-    let equipo = document.createElement("div");
-    equipo.append(escudo, `${lista[j].nombre}`);
-
-    row.append(equipo);
-  }
+  console.log(setEquipos);
 }

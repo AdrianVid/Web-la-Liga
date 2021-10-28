@@ -34,6 +34,7 @@ function init(data) {
     tbody.innerHTML = "";
     filtros(data.matches);
   });
+  loader.style.display = "none";
 }
 
 function crearTabla(partidos) {
@@ -97,7 +98,6 @@ function filtros(partidos) {
         equipo.awayTeam.name == select.value
     );
   }
-
   if (ganados.checked == true) {
     arrayFiltrada = arrayFiltrada.filter(
       (equipo) =>
@@ -130,9 +130,10 @@ function filtros(partidos) {
       title: "Oops...",
       text: "No hay resultados para tu busqueda",
     });
+    select.value = "Todos los equipos";
+    perdidos.checked = false;
+    empatados.checked = false;
+    ganados.checked = false;
   }
   crearTabla(arrayFiltrada);
 }
-window.onload = function () {
-  loader.style.display = "none";
-};

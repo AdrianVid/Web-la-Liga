@@ -21,7 +21,7 @@ fetch(url, {
 function init(data) {
   estadPartidos(data.matches);
   partidosVisitantes(data.matches);
-  load();
+  loader.style.display = "none";
 }
 
 function estadPartidos(partidos) {
@@ -180,7 +180,3 @@ function crearTablaVis(array2) {
     tbody2.append(fila);
   }
 }
-
-window.onload = function load() {
-  loader.style.display = "none";
-};

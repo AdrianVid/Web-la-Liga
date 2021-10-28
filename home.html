@@ -5,47 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img
-            src="./Imagenes/La-Liga.jpg"
-            alt=""
-            width="50"
-            height="70"
-            class="d-inline-block align-text-top"
-          />
-          Laliga</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <a class="navbar-brand" href="#"><img
+          src="./Imagenes/La-Liga.jpg"
+          alt=""
+          width="50"
+          height="70"
+          class="d-inline-block align-text-top"/>
+           Laliga</a> 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="./home.html"
-              >Home</a
-            >
-            <a class="nav-link" href="./clasificacion.html">Clasificacion</a>
-            <a class="nav-link" href="./partidos.html">Partidos</a>
-            <a class="nav-link" href="./estadisticas.html">Estadisticas</a>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+              <a class="nav-link" href="./clasificacion.html">Clasificación</a>
+              <a class="nav-link" href="./partidos.html">Partidos</a>
+              <a class="nav-link" href="./estadisticas.html">Estadísticas</a>
+          </ul>
         </div>
       </div>
     </nav>
@@ -58,7 +40,6 @@
         class="carousel slide"
         data-bs-ride="carousel"
       >
-       
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
@@ -131,36 +112,10 @@
         </p>
       </div class="container-fluid">
       <div class="row" id="row">
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">Athetic de Bilbao</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">Atletico de Madrid</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">C.A Osasuna</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">D. Alavés</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">Cadiz C.F</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">Elche C.F</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">F.C.Barcelona</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">Getafe C.F</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">Granada C.F</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">Levante U.D</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">Rayo Vallecano</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">Celta de Vigo</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">R.C.D Espanyol</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">R.C.D Mallorca</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">R.B Betis</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">R.Madrid</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">R.Sociedad</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">Sevilla F.C</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">Valencia C.F</div>
-        <div class="d-flex justify-content-around col-sm-12 col-md-6 col-lg-6">Villareal C.F</div>
       </div>
     </div>
     </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./JS/home.js"></script>
-    <script src="./JS/clasificacion.js"></script>
   </body>
 </html>
